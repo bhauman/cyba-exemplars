@@ -133,13 +133,17 @@ app.board.LaneTabs = ({lanes, active}) => html`
 
 // The lanes before the first answer, so the server's paint and a slow load are
 // the shape of the board. The server render asks nothing: it has no visitor.
+// Before setup has run there are no tables, which is no fault of the reader's,
+// and only a refusal asking them to sign in gets the link.
 const Waiting = ({error}) => html`
   <div class="lanes">
     ${shared.board.shown().map((l) => html`
       <section key=${l.id} class="lane">
         <header class="lane-top"><h2>${l.name}</h2></header>
         <div class="cards">${error && l.id === shared.board.start
-          ? html`<p class="empty problem">${error} <a href=${cyba.signin.url({next: location.pathname})}>Sign in</a></p>`
+          ? /no such table/.test(error)
+            ? html`<p class="empty">Setting up the board…</p>`
+            : html`<p class="empty problem">${error}${/sign in/i.test(error) && html` <a href=${cyba.signin.url({next: location.pathname})}>Sign in</a>`}</p>`
           : html`<div class="ghost"></div><div class="ghost"></div>`}</div>
       </section>`)}
   </div>`;
