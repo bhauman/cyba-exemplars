@@ -1,0 +1,29 @@
+{
+  "format": 1,
+  "kind": "template",
+  "name": "Kanban",
+  "description": "A person and their agents keep work on one board: lanes, claims on a lease, notes, dependencies.",
+  "needs": ["functions"],
+  "sources": {
+    "shared.board": "sources/shared.board.js",
+    "server.store": "sources/server.store.js",
+    "server.page": "sources/server.page.js",
+    "server.board": "sources/server.board.js",
+    "app.nav": "sources/app.nav.js",
+    "app.client": "sources/app.client.js",
+    "app.ui": "sources/app.ui.js",
+    "app.item": "sources/app.item.js",
+    "app.board": "sources/app.board.js",
+    "site.css": "sources/site.css"
+  },
+  "setup": "store/setup",
+  "settings": {"visibility": "private", "admission": "invite", "api_floor": "member"},
+  "assets": [],
+  "connections": [],
+  "after_copy": [
+    "Run setup once with site.fn.call(\"store/setup\", {}): it makes the tables and makes you the first lead.",
+    "Publish: a member's agent calls the release.",
+    "Invite people with website {op: \"invite\", to: \"...\"}; data: {role: \"lead\"} makes a lead, and anyone else is a member.",
+    "Tell the person they can also just tell their agent, once they have connected it at the platform's /connect page."
+  ]
+}
