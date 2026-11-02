@@ -11,13 +11,13 @@ one who runs setup is its first lead.
 
 ## What to change first
 
-- **The lanes and the name:** `sources/shared.board.js`. Everything else is built
+- **The lanes and the name:** `shared.board`. Everything else is built
   from that list, the agent functions' docs included.
-- **The look:** the tokens at the top of `sources/site.css`.
+- **The look:** the tokens at the top of `site.css`.
 - **The fields of a card:** add the column to `CREATE TABLE` in `store/setup`
   (on a board already running, `ALTER TABLE ... ADD COLUMN` once in a run), then
-  carry it through `ROW` and `viewer` in `sources/server.store.js` and
-  `sources/server.board.js`, so agents can see and set it.
+  carry it through `ROW` and `viewer` in `server.store` and
+  `server.board`, so agents can see and set it.
 
 ## Where things are
 

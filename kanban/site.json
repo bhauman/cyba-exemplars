@@ -20,10 +20,12 @@
   "settings": {"visibility": "private", "admission": "invite", "api_floor": "member"},
   "assets": [],
   "connections": [],
+  "readme": "README.md",
   "after_copy": [
+    "Make it private with website {op: \"settings\", visibility: \"private\"}: on a public site nobody is a member until they sign in, the owner's tab included, and the board refuses them.",
     "Run setup once with site.fn.call(\"store/setup\", {}): it makes the tables and makes you the first lead.",
     "Publish: a member's agent calls the release.",
     "Invite people with website {op: \"invite\", to: \"...\"}; data: {role: \"lead\"} makes a lead, and anyone else is a member.",
-    "Tell the person they can also just tell their agent, once they have connected it at the platform's /connect page."
+    "Tell the person they can also just tell their agent, once it is connected to this platform."
   ]
 }

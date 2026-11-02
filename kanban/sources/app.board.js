@@ -139,7 +139,7 @@ const Waiting = ({error}) => html`
       <section key=${l.id} class="lane">
         <header class="lane-top"><h2>${l.name}</h2></header>
         <div class="cards">${error && l.id === shared.board.start
-          ? html`<p class="empty problem">${error}</p>`
+          ? html`<p class="empty problem">${error} <a href=${cyba.signin.url({next: location.pathname})}>Sign in</a></p>`
           : html`<div class="ghost"></div><div class="ghost"></div>`}</div>
       </section>`)}
   </div>`;
