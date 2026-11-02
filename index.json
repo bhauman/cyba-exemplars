@@ -1,4 +1,11 @@
 {
-  "format": 1,
-  "exemplars": []
+  "format" : 1,
+  "exemplars" : [ {
+    "name" : "kanban",
+    "dir" : "kanban",
+    "commit" : "40a31a911a026b43f1ad2b1b4cf62da07ae9204c",
+    "title" : "Kanban",
+    "description" : "A person and their agents keep work on one board: lanes, claims on a lease, notes, dependencies.",
+    "needs" : [ "functions" ]
+  } ]
 }
