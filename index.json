@@ -3,7 +3,7 @@
   "exemplars" : [ {
     "name" : "kanban",
     "dir" : "kanban",
-    "commit" : "70219f385e9215242625b584586c2a3351299511",
+    "commit" : "eb49a1b2381f57ecbac124c009494248324f9943",
     "title" : "Kanban",
     "description" : "A person and their agents keep work on one board: lanes, claims on a lease, notes, dependencies.",
     "needs" : [ "functions" ]
